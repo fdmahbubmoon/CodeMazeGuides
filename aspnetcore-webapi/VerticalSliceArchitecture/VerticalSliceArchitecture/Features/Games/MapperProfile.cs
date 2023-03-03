@@ -8,7 +8,9 @@ namespace VerticalSliceArchitecture.Features.Games
         public MapperProfile()
         {
             CreateMap<Game, AddGameToConsole.GameResult>();
-            CreateMap<Game, GetAllGamesForConsole.GameResult>();
+            CreateMap<Game, GetAllGamesForConsole.GameResult>()
+                .ForMember(dest => dest.RAM, opt => opt.MapFrom(m=>m.Requirement.RAM))
+                .ForMember(dest => dest.GPU, opt => opt.MapFrom(m=>m.Requirement.GPU));
             CreateMap<Game, UpdateGameForConsole.UpdateGameResult>();
         }
     }

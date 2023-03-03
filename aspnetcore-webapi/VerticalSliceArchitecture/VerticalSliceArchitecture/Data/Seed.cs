@@ -29,6 +29,22 @@ namespace VerticalSliceArchitecture.Data
                 Manufacturer = "Nintendo"
             });
 
+            //Seeding Requirements
+
+            context.Requirements.Add(new Requirement
+            {
+                Id = 1,
+                RAM = 2,
+                GPU = 2
+            });
+
+            context.Requirements.Add(new Requirement
+            {
+                Id = 2,
+                RAM = 16,
+                GPU = 4
+            });
+
             //Seeding Games
 
             context.Games.Add(new Game
@@ -36,7 +52,8 @@ namespace VerticalSliceArchitecture.Data
                 Id = 10,
                 Name = "Horizon Forbidden West",
                 Publisher = "Sony Interactive Entertainment",
-                ConsoleId = 2
+                ConsoleId = 2,
+                RequirementId = 1
             });
 
             context.Games.Add(new Game
@@ -44,7 +61,8 @@ namespace VerticalSliceArchitecture.Data
                 Id = 11,
                 Name = "Animal Crossing: New Horizons",
                 Publisher = "Nintendo",
-                ConsoleId = 3
+                ConsoleId = 3,
+                RequirementId = 2
             });
 
             context.Games.Add(new Game
@@ -52,7 +70,8 @@ namespace VerticalSliceArchitecture.Data
                 Id = 12,
                 Name = "Halo Infinite",
                 Publisher = "Xbox Game Studios",
-                ConsoleId = 1
+                ConsoleId = 1,
+                RequirementId = 2
             });
 
             context.SaveChanges();

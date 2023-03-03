@@ -17,6 +17,8 @@ namespace VerticalSliceArchitecture.Features.Games
             public int Id { get; set; }
             public string Name { get; set; }
             public string Publisher { get; set; }
+            public int RAM { get; set; }
+            public int GPU { get; set; }
         }
 
         public class Handler : IRequestHandler<GetGamesQuery, IEnumerable<GameResult>>

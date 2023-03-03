@@ -1,5 +1,6 @@
 ﻿using VerticalSliceArchitecture.Features.Consoles;
 using VerticalSliceArchitecture.Features.Games;
+using VerticalSliceArchitecture.Features.Requirements;
 
 namespace VerticalSliceArchitecture.ServiceManager
 {
@@ -7,6 +8,7 @@ namespace VerticalSliceArchitecture.ServiceManager
     {
         IConsoleService Console { get; }
         IGameService Game { get; }
+        IRequirementService Requirement { get; }
         Task SaveAsync();
     }
 }

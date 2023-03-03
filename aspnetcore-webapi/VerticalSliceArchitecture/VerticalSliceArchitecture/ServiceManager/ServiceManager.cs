@@ -1,6 +1,7 @@
 ﻿using VerticalSliceArchitecture.Data;
 using VerticalSliceArchitecture.Features.Consoles;
 using VerticalSliceArchitecture.Features.Games;
+using VerticalSliceArchitecture.Features.Requirements;
 
 namespace VerticalSliceArchitecture.ServiceManager
 {
@@ -9,6 +10,7 @@ namespace VerticalSliceArchitecture.ServiceManager
         private readonly DataContext _context;
         private IConsoleService _consoleService;
         private IGameService _gameService;
+        private IRequirementService _requirementService;
 
         public ServiceManager(DataContext context)
         {
@@ -34,6 +36,17 @@ namespace VerticalSliceArchitecture.ServiceManager
                     _gameService = new GameService(_context);
 
                 return _gameService;
+            }
+        }
+
+        public IRequirementService Requirement
+        {
+            get
+            {
+                if (_requirementService == null)
+                    _requirementService = new RequirementService(_context);
+
+                return _requirementService;
             }
         }
 

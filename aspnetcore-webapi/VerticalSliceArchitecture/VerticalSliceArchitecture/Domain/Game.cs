@@ -7,5 +7,7 @@
         public string Publisher { get; set; }
         public int ConsoleId { get; set; }
         public GameConsole Console { get; set; }
+        public int RequirementId { get; set; }
+        public Requirement Requirement { get; set; }
     }
 }

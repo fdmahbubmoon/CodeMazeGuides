@@ -27,6 +27,7 @@ namespace VerticalSliceArchitecture.Features.Games
         public async Task<IEnumerable<Game>> GetAllGamesAsync(int consoleId)
         {
             return await _context.Games
+                .Include(inc => inc.Requirement)
                 .Where(x => x.ConsoleId == consoleId)
                 .ToListAsync();
         }
