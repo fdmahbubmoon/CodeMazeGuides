@@ -4,3 +4,4 @@ global using VerticalSliceArchitecture.Domain;
 global using VerticalSliceArchitecture.Features.Consoles;
 global using VerticalSliceArchitecture.Features.Games;
 global using Xunit;
+global using VerticalSliceArchitecture.Features.Requirements;
